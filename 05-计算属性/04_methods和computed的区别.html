@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <template id="my-template">
+        <h2>{{getOneToTen()}}</h2>
+        <h2>{{getOneToTen()}}</h2>
+        <h2>{{getOneToTen()}}</h2> 
+        <h2>{{getOneToTen()}}</h2>
+        <h2>{{getOneToTen()}}</h2>
+        <h2>{{getOneToTen()}}</h2>
+        <h2>{{getOneToTen()}}</h2>
+        <h2>{{getOneToTen()}}</h2>
+        <h2>{{oneToTen}}</h2>
+        <h2>{{oneToTen}}</h2>
+        <h2>{{oneToTen}}</h2>
+        <h2>{{oneToTen}}</h2>
+        <h2>{{oneToTen}}</h2>
+        <h2>{{oneToTen}}</h2>
+        <h2>{{oneToTen}}</h2>
+
+    </template>
+    <script src="../vue.global.js"></script>
+    <script>
+        /*
+                1.计算属性是有缓存的，当我们在页面中多次运用，只会指向一次，当计算属性依赖的数据发生改变时，就会重新计算
+                2.方法是无论页面运用几次，都会执行几次，没有缓存
+                */
+        Vue.createApp({
+            template: "#my-template",
+            data() {
+                return {
+                    message: 'HELLO VUEJS 3 !'
+                }
+            },
+            computed: {
+                oneToTen() {
+                    var result = 0;
+                    for (let i = 0; i <= 10; i++) {
+                        result += i;
+                    };
+                    console.log(result);
+                    return result;
+                }
+            },
+            methods: {
+                getOneToTen() {
+                    var result = 0;
+                    for (let i = 0; i <= 10; i++) {
+                        result += i;
+                    };
+                    console.log(result);
+                    return result;
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

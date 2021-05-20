@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: skyblue;
+        }
+        
+        .bgc {
+            background-color: pink;
+        }
+        
+        .fontStyle {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script type="text/x-template" id="my-template">
+        <!-- 第一种 对象语法 -->
+        <h1 :class="{active:isActive}">{{message}}</h1>
+        <button @click="changeActive">改变</button>
+        <!-- 第二种多个键值对 -->
+        <h1 :class="{active:isActive,bgc:isShow,'fontStyle'}" class="fontStyle">{{message}}</h1>
+
+        <button @click="changeActive">改变</button>
+        <!-- 可将整个对象放置在计算属性和data属性当中 -->
+    </script>
+    <script src="../vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            template: "#my-template",
+            data() {
+                return {
+                    message: 'HELLO VUE3 !',
+                    info: "Hello TypeScript!",
+                    isActive: true,
+                    isShow: false
+                }
+            },
+            methods: {
+                changeActive() {
+                    this.isShow = !this.isShow;
+                    this.isActive = !this.isActive
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+
+</html>
