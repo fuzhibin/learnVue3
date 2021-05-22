@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <template id="my-template">
+      <!-- v-model绑定textarea     -->
+      <textarea v-model="message"></textarea>
+      <h2>message:{{message}}</h2>
+      <!-- 单选框 -->
+      <label for="agree">
+        <input id="agree" type="checkbox" v-model="isAgree">同意协议
+      </label>
+      <h2>isAgree:{{isAgree}}</h2>
+      <!-- 复选框 -->
+      <label for="appel">
+          <input type="checkbox"id="appel" value="苹果" v-model="fruits">苹果
+        </label>
+        <label for="orange">
+            <input type="checkbox" id="orange" value="橘子" v-model="fruits">橘子
+          </label>
+          <label for="banana">
+            <input type="checkbox"  id="banana" value="香蕉" v-model="fruits">香蕉
+          </label>
+          <h2>fruits:{{fruits}}</h2>
+
+          <!-- 单选框 -->
+          <label for="meal">
+              <input type="radio"  id="meal" value="男" v-model="sex">男
+          </label>
+          <label for="femeal">
+            <input type="radio"  id="femeal" value="女" v-model="sex">女
+        </label>
+        <h2>sex:{{sex}}</h2>
+
+        <!-- select -->
+        <span>你喜欢的科目是：</span>
+        <select name="" v-model="likeClass" multiple>
+            <option value="语文">语文</option>
+            <option value="数学">数学</option>
+            <option value="英语">英语</option>
+            <option value="物理">物理</option>
+        </select>
+        <h2>likeClass:{{likeClass}}</h2>
+    </template>
+    <script src="../vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            template: "#my-template",
+            data() {
+                return {
+                    message: 'HELLO VUEJS 3 !',
+                    isAgree: true,
+                    fruits: ['香蕉'],
+                    sex: '女',
+                    likeClass: ['物理']
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
