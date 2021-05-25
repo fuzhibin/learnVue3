@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app"></div>
+    <script>
+        console.log(void 0);
+
+        function Student(name) {
+            this.name = name;
+        }
+
+        Student.prototype.say = function() {
+            console.log('我的名字是：' + this.name);
+        }
+        const fzb = new Student('fzb');
+        fzb.say();
+        console.log(fzb);
+
+        console.log(fzb.__proto__);
+        console.log(fzb.constructor.prototype);
+        console.log(Object.getPrototypeOf(fzb));
+
+        console.log(Student.prototype === fzb.__proto__);
+
+        const app = document.querySelector('.app');
+        console.log(getComputedStyle(app).getPropertyValue('display'));
+        console.log([, ].length);
+
+        function createPerson(name, age, job) {
+            var o = new Object();
+            o.name = name;
+            o.age = age;
+            o.job = job;
+            o.sayname = function() {
+                alert(this.name);
+            };
+            return o;
+        }
+        var person1 = createPerson("a", 29, "cc");
+        var person2 = createPerson("b", 26, "cc");
+        console.log(typeof(person1));
+    </script>
+</body>
+
+</html>
