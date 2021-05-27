@@ -1,0 +1,13 @@
+.message {
+    font-size: 25px;
+    color: #12345678;
+    user-select: none;
+}
+
+.one-box {
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/zznh.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
