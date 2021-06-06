@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+    <template id="my-template">
+        <ul>
+            <template v-for="(value,key,index) in info">
+                <li>{{value}}</li>
+                <li>{{key}}</li>
+                <li>{{index}}</li>
+                <li>                   </li>
+            </template>
+    </ul>
+    </template>
+    <script src="../vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            template: "#my-template",
+            data() {
+                return {
+                    message: 'HELLO VUEJS 3 !',
+                    info: {
+                        name: 'fuzhibin',
+                        height: 188,
+                        age: 21
+                    }
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

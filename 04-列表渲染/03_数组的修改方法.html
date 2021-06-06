@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <template id="my-template">
+        <input type="text" v-model.trim="newMov">
+        <button @click="changeMovices">数组+1</button>
+      <h2 v-for="(value,index) in movies">{{value}} <button @click="removeaa(index)">删除</button></h2>    
+    </template>
+    <script src="../vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            template: "#my-template",
+            data() {
+                return {
+                    movies: [
+                        "星际穿越",
+                        "盗梦空间",
+                        "大话西游",
+                        "教父",
+                        "少年派"
+                    ],
+                    newMov: ''
+                }
+            },
+            methods: {
+                changeMovices() {
+                    this.movies.push(this.newMov);
+                },
+                removeaa(index) {
+                    console.log(index);
+                    this.movies.splice(index, 1);
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

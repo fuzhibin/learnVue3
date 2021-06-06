@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <template id="my-template">
+        <button @click="butClic">点击</button>
+      <h2>{{oneToTen}}</h2>    
+    </template>
+    <script src="../vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            template: "#my-template",
+            data() {
+                return {
+                    message: 'HELLO VUEJS 3 !'
+                }
+            },
+            computed: {
+                // oneToTen() {
+                //     var result = 0;
+                //     for (let i = 0; i <= 10; i++) {
+                //         result += i;
+                //     };
+                //     console.log(result);
+                //     return result;
+                // }
+                oneToTen: {
+                    set: function() {
+                        console.log(1111);
+                    },
+                    get: function() {
+                        var result = 0;
+                        for (let i = 0; i <= 10; i++) {
+                            result += i;
+                        };
+                        return result;
+                    }
+                }
+            },
+            methods: {
+                butClic() {
+                    this.oneToTen = 100;
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

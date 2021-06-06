@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <template id="my-template">
+        <h2>{{info.name.lastName}}</h2>
+      <button @click="changeLastName">改变lastName</button>    
+    </template>
+    <script src="../vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            template: "#my-template",
+            created() {
+                this.unwatch = this.$watch('info', function(newValue, oldValue) {
+                    console.log(newValue, oldValue);
+                }, {
+                    deep: true,
+                    immediate: true
+                })
+            },
+            data() {
+                return {
+                    unwatch: null,
+                    info: {
+                        name: {
+                            firstName: 'fu',
+                            lastName: 'zhibin'
+                        },
+                        age: 18,
+                        height: 188
+                    },
+                    count: 0
+                }
+            },
+            watch: {
+                info: {
+                    handler: function(newValue, oldValue) {
+
+                    },
+                    immediate: true,
+                    deep: true,
+                },
+                'info.name.lastName': function(newValue, oldValue) {
+                    console.log(newValue, oldValue);
+                },
+                count: ['aaaa', {
+                    handler(newValue, oldValue) {
+                        console.log(2222);
+                    }
+                }]
+            },
+            methods: {
+                aaaa(newValue, oldValue) {
+                    console.log(11111);
+                },
+                changeLastName() {
+                    this.count++;
+                    this.info.name.lastName = 'aaaa'
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
