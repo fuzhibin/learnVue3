@@ -9,8 +9,8 @@
 export default {
     emits:{
         // 里面是取不到this的
-        addNumber:(value)=>{
-            return value>10
+        addNumber:(value,num)=>{
+            return true
         }
     },
   data () {
@@ -20,7 +20,7 @@ export default {
   },
   methods:{
       addN(){
-          this.$emit('addNumber',this.size)
+          this.$emit('addNumber',this.size,1)
       }
   }
 }

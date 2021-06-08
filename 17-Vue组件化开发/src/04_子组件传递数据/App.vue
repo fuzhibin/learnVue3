@@ -28,7 +28,8 @@ export default {
       subOneClic(){
           this.counte--
       },
-      addNumber(num){
+      addNumber(num,num2){
+          console.log(num2);
           this.counte+=num
       }
   }
