@@ -9,8 +9,10 @@
 export default {
     emits:{
         // 里面是取不到this的
-        addNumber:(value,num)=>{
-            return true
+        addNumber:function(num){
+          console.log(this);
+          console.log(num);
+          return true
         }
     },
   data () {
