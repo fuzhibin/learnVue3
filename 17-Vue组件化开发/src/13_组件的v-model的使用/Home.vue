@@ -33,9 +33,6 @@ export default {
   methods:{
       iptInpt(e){
           this.$emit('update:modelValue',e.target.value)
-      },
-      aaaaa(e){
-           this.$emit('update:title',Number(e.target.value))
       }
   }
 }

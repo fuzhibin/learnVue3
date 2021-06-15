@@ -4,7 +4,6 @@
     <goods :name='goods.name'
            :price='goods.price'
            : ="goods.info">
-
     </goods>
     <h3>**********01_父传子_数组用法**********</h3>
     <h3>----------02_父传子_对象用法----------</h3>
@@ -17,8 +16,12 @@
     <h3>----------02_父传子_对象用法----------</h3>
     <h3>++++++++++03_非prop的Attrs的传递++++++++++</h3>
     <show-message class="aaa" name='bbb'></show-message>
-    <multi-root-element class="1111" id="2222"></multi-root-element>
+   
     <h3>++++++++++03_非prop的Attrs的传递++++++++++</h3>
+
+     <h2>*********04_子组件内多个根元素************</h2>
+     <multi-root-element class="1111" id="2222"></multi-root-element>
+     <h2>*********04_子组件内多个根元素************</h2>
 </div>
 </template>
 

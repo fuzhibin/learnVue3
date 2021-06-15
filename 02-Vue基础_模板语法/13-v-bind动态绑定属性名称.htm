@@ -14,7 +14,7 @@
     </div>
     <script type="text/x-template" id="my-template">
         <div>
-            <h1 :[aaaa]="dddd">11111</h1>
+            <h1 :[name]="dddd">11111</h1>
         </div>
     </script>
     <script src="../vue.global.js"></script>
@@ -23,12 +23,9 @@
             template: "#my-template",
             data() {
                 return {
-                    aaaa: 'bbb',
-                    cccc: '2222'
+                    name: 'bbb',
+                    dddd: '2222'
                 }
-            },
-            methods: {
-
             }
         }).mount("#app")
     </script>

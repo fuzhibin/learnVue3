@@ -1,6 +1,5 @@
 <template>
 <div class="navbar">
-<h4>{{name}}</h4>
 <h4>{{height}}</h4>
 <h4>{{age}}</h4>
 <h4>{{address}}</h4>
@@ -10,7 +9,6 @@
 <script>
 export default {
     props:{
-        name:String,
         height:[Number,String],
         age:{
             type:Number,

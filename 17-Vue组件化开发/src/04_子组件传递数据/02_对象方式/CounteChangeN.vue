@@ -9,9 +9,10 @@
 export default {
     emits:{
         // 里面是取不到this的
-        addNumber:function(num){
-          console.log(this);
-          console.log(num);
+        addNumber:function(num1,num2){
+          console.log(this); // this -> undefined
+          console.log(num1); // 0
+          console.log(num2); // 1
           return true
         }
     },

@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    emits:['addOneClic','subOneClic'],
+  emits:['addOneClic','subOneClic'],
   data () {
     return {
     }

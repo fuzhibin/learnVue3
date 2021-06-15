@@ -1,10 +1,10 @@
 <template>
 <div class="navbar">
     <div class="left">      
-        <slot name="left" :list='list'></slot>
+        <slot name="left"></slot>
     </div>
     <div class="center">
-        <slot :name="name">
+        <slot name="center"  :list="list">
           <h3>我们是默认内容</h3>
         </slot>
     </div>
@@ -16,20 +16,9 @@
 
 <script>
 export default {
-    props:{
-        name:{
-            type:String,
-            default:'fzb'
-        },
-        list:{
-            type:Array,
-            default(){
-                return ['a','b','c','d']
-            }
-        }
-    },
   data () {
     return {
+        list:['a','b','c','d']
     }
   }
 }

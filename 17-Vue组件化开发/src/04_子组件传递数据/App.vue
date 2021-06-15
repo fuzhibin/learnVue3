@@ -3,18 +3,16 @@
 <h2>counte的值是：{{counte}}</h2>
 <counter-change 
    @addOneClic="addOneClic"
-   @subOneClic='subOneClic'/>
-   <counte-change-n @addNumber='addNumber'></counte-change-n>
+   @subOneClic='subOneClic'>
+</counter-change>
 </div>
 </template>
 
 <script>
 import CounterChange from './01_数组方式/CounterChange.vue'
-import CounteChangeN from './02_对象方式/CounteChangeN.vue'
 export default {
   components:{
-     CounterChange ,
-     CounteChangeN
+     CounterChange
   },
   data () {
     return {
@@ -27,10 +25,6 @@ export default {
       },
       subOneClic(){
           this.counte--
-      },
-      addNumber(num,num2){
-          console.log(num2);
-          this.counte+=num
       }
   }
 }

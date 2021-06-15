@@ -12,10 +12,11 @@
     <div id="app">
 
     </div>
+
     <template id="my-template">
         <button @click="isShow = !isShow">改变isShow</button>
-      <h2 v-if="isShow">{{message}}</h2>
-      <h2 v-show="isShow">{{message}}</h2>    
+      <h2 v-if="isShow">isShow:{{isShow}}</h2>
+      <h2 v-show="isShow">isShow:{{isShow}}</h2>    
     </template>
     <script src="../vue.global.js"></script>
     <script>

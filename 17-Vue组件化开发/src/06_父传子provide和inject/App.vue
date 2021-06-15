@@ -21,7 +21,7 @@ export default {
     components:{
         Main
     },
-  data () {
+   data () {
     return {
         array:[1,2,3,4]
     }

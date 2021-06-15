@@ -7,7 +7,6 @@
 <script>
 import Content from './Content.vue'
 export default {
-    
     components:{
         Content
     },

@@ -1,17 +1,17 @@
 <template>
 <div class="app">
-    <nav-bar :name="name" :list="list">
-        <template v-slot:left="leftList">
-            <span >{{leftList.list}}--</span>
+    <NavBar >
+        <template v-slot:left>
+           <button>left</button>
         </template>
-        <template #[name]>
-            <button>center</button>
+        <template v-slot:center="centerSlot">
+            <span>{{centerSlot.list}}</span>
         </template>
         <template v-slot:right>
             <button>right</button>
         </template>
+    </NavBar>
 
-    </nav-bar>
 </div>
 </template>
 
@@ -23,13 +23,10 @@ export default {
     },
   data () {
     return {
-        name:'fzb',
-        list:[1,2,3,4,5,6]
-    }
+       }
   }
 }
 </script>
 
 <style  scoped>
-
 </style>
